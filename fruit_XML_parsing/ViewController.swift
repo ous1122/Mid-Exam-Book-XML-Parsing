@@ -8,49 +8,76 @@
 
 import UIKit
 
-class ViewController: UIViewController, XMLParserDelegate {
+class ViewController: UIViewController, XMLParserDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var myTableView: UITableView!
     var item:[String:String] = [:]  // item[key] => value
     var elements:[[String:String]] = []
     var currentElement = ""
 
+//    @IBOutlet weak var fName: UILabel!
+//    @IBOutlet weak var fColor: UILabel!
+//    @IBOutlet weak var fCost: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        myTableView.delegate = self
+        myTableView.dataSource = self
         
-//        if let path = Bundle.main.url(forResource: "fruit", withExtension: "xml") {
-//            //print(path)
-//            if let parser = XMLParser(contentsOf: path) {
-//                parser.delegate = self
-//
-//                if parser.parse() {
-//                    print("parse succeed!")
-//                    print(elements)
-//                } else {
-//                    print("parse failed!")
-//                }
-//            }
-//        } else {
-//            print("xml file not found")
-//        }
-        
-        let strURL = "http://api.androidhive.info/pizza/?format=xml"
-
-        if NSURL(string: strURL) != nil {
-            if let parser = XMLParser(contentsOf: NSURL(string: strURL)! as URL) {
+        if let path = Bundle.main.url(forResource: "fruit", withExtension: "xml") {
+            //print(path)
+            if let parser = XMLParser(contentsOf: path) {
                 parser.delegate = self
 
                 if parser.parse() {
-                    print("parsing success")
+                    print("parse succeed!")
                     print(elements)
                 } else {
-                    print("parsing fail")
+                    print("parse failed!")
                 }
-
             }
+        } else {
+            print("xml file not found")
         }
+        
+//        let strURL = "http://api.androidhive.info/pizza/?format=xml"
+//
+//        if NSURL(string: strURL) != nil {
+//            if let parser = XMLParser(contentsOf: NSURL(string: strURL)! as URL) {
+//                parser.delegate = self
+//
+//                if parser.parse() {
+//                    print("parsing success")
+//                    print(elements)
+//                } else {
+//                    print("parsing fail")
+//                }
+//
+//            }
+//        }
     }
 
+    // UITableView Delegate
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return elements.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = myTableView.dequeueReusableCell(withIdentifier: "RE", for: indexPath)
+        
+        let myItem = elements[indexPath.row]
+        
+        let name = cell.viewWithTag(1) as! UILabel
+        let color = cell.viewWithTag(2) as! UILabel
+        let cost = cell.viewWithTag(3) as! UILabel
+        
+        name.text = myItem["name"]
+        color.text = myItem["color"]
+        cost.text = myItem["cost"]
+        
+        return cell
+    }
     
     // XMLParseDelegate
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
