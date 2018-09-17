@@ -99,7 +99,7 @@ class ViewController: UIViewController, XMLParserDelegate, UITableViewDelegate, 
             let data = string.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
         print("data = \(data)")
         if !data.isEmpty {
-            item[currentElement] = data
+            item[currentElement] = data  // item[key] => value  =>  [key:value]
         }
     }
 
