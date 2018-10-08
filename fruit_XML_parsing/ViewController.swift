@@ -105,7 +105,7 @@ class ViewController: UIViewController, XMLParserDelegate, UITableViewDelegate, 
 
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "book" {
-            elements.append(item)
+            elements.append(item) //
         }
     }
 }
