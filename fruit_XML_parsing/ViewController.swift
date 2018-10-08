@@ -70,11 +70,11 @@ class ViewController: UIViewController, XMLParserDelegate, UITableViewDelegate, 
         
         let name = cell.viewWithTag(1) as! UILabel
         let color = cell.viewWithTag(2) as! UILabel
-        let cost = cell.viewWithTag(3) as! UILabel
+
         
-        name.text = myItem["name"]
-        color.text = myItem["color"]
-        cost.text = myItem["cost"]
+        name.text = myItem["title"]
+        color.text = myItem["author"]
+
         
         return cell
     }
@@ -104,7 +104,7 @@ class ViewController: UIViewController, XMLParserDelegate, UITableViewDelegate, 
     }
 
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        if elementName == "item" {
+        if elementName == "book" {
             elements.append(item)
         }
     }
