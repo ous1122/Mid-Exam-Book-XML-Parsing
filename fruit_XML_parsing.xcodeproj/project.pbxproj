@@ -12,7 +12,6 @@
 		0544463A2148C010008B07B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 054446382148C010008B07B1 /* Main.storyboard */; };
 		0544463C2148C011008B07B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0544463B2148C011008B07B1 /* Assets.xcassets */; };
 		0544463F2148C011008B07B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0544463D2148C011008B07B1 /* LaunchScreen.storyboard */; };
-		0544464C2148CA7B008B07B1 /* fruit.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0544464B2148CA7B008B07B1 /* fruit.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,7 @@
 		0544463B2148C011008B07B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0544463E2148C011008B07B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		054446402148C011008B07B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0544464B2148CA7B008B07B1 /* fruit.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = fruit.xml; sourceTree = "<group>"; };
+		E53F2C272181899600F2AB20 /* Book.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Book.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +55,7 @@
 		054446332148C010008B07B1 /* fruit_XML_parsing */ = {
 			isa = PBXGroup;
 			children = (
-				0544464B2148CA7B008B07B1 /* fruit.xml */,
+				E53F2C272181899600F2AB20 /* Book.xml */,
 				054446342148C010008B07B1 /* AppDelegate.swift */,
 				054446362148C010008B07B1 /* ViewController.swift */,
 				054446382148C010008B07B1 /* Main.storyboard */,
@@ -99,6 +98,7 @@
 				TargetAttributes = {
 					054446302148C010008B07B1 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -127,7 +127,6 @@
 			files = (
 				0544463F2148C011008B07B1 /* LaunchScreen.storyboard in Resources */,
 				0544463C2148C011008B07B1 /* Assets.xcassets in Resources */,
-				0544464C2148CA7B008B07B1 /* fruit.xml in Resources */,
 				0544463A2148C010008B07B1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,9 +290,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ac.dit.cs.fruit-XML-parsing";
+				PRODUCT_BUNDLE_IDENTIFIER = "ac.dit.cs.Mid-Exam-Book-XML-Parsing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -309,9 +308,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ac.dit.cs.fruit-XML-parsing";
+				PRODUCT_BUNDLE_IDENTIFIER = "ac.dit.cs.Mid-Exam-Book-XML-Parsing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

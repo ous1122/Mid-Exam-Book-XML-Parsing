@@ -1,0 +1,24 @@
+<root>
+    <elements>
+        <item>
+            <title>해리포트와 마법의 돌</title>
+            <author>J.K 로링스</author>
+        </item>
+        <item>
+            <title>조선왕조실록</title>
+            <author>설민석</author>
+        </item>
+        <item>
+            <title>코스모스</title>
+            <author>칼세이건</author>
+        </item>
+        <book>
+            <title>홍길동전</title>
+            <author>허균</author>
+        </book>
+        <book>
+            <title>어부사시사</title>
+            <author>윤선도</author>
+        </book>
+    </elements>
+</root>
